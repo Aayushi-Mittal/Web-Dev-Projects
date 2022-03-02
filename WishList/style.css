@@ -1,0 +1,49 @@
+:root {
+    --primary: #edf7f6;
+    --secondary: #b7d8fe;
+    --correct: #d9f99d;
+    --red: #fecdd3;
+    --options: #dbeafe;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-image: url(https://source.unsplash.com/random/900×700/?gifts);
+    background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    font-family:sans-serif;
+}
+
+main {
+    padding: 1rem;
+    border-radius: 1.5rem;
+    background-color:#ffffff85;
+    backdrop-filter: blur(14px) saturate(180%);
+}
+
+.item{
+    display:flex;
+    flex-direction:row;
+    justify-content: start;
+    margin:5px 0px;
+    padding:5px;
+}
+
+.checked{
+    text-decoration: line-through;
+}
+
+/* .delete{
+    background:var(--red);
+    color:black;
+    border:none;
+    border-radius:5px;
+    padding:2px;
+    position:relative;
+    right:0px;
+    margin-left:50px;
+} */
