@@ -13,37 +13,26 @@ body {
     flex-direction: row;
     background-image: url(https://source.unsplash.com/random/900×700/?gifts);
     background-size: cover;
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
 
 main {
     padding: 1rem;
     border-radius: 1.5rem;
-    background-color:#ffffff85;
+    background-color: #ffffff85;
     backdrop-filter: blur(14px) saturate(180%);
 }
 
-.item{
-    display:flex;
-    flex-direction:row;
+.item {
+    display: flex;
+    flex-direction: row;
     justify-content: start;
-    margin:5px 0px;
-    padding:5px;
+    margin: 5px 0px;
+    padding: 5px;
 }
 
-.checked{
+.checked {
     text-decoration: line-through;
 }
-
-/* .delete{
-    background:var(--red);
-    color:black;
-    border:none;
-    border-radius:5px;
-    padding:2px;
-    position:relative;
-    right:0px;
-    margin-left:50px;
-} */
