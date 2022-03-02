@@ -35,11 +35,7 @@ function renderList() {
     list.map((item, i) => {
         output.push(`
             <li class="item">
-                <input class="checkbox ${
-                    item.isDone ? "checked" : ""
-                }" type="checkbox" name="${i}" required ${
-            item.isDone ? "checked=true" : ""
-        } />
+                <input class="checkbox ${item.isDone ? "checked" : ""}" type="checkbox" name="${i}" required ${item.isDone ? "checked=true" : ""} />
                 <label for="${i}" class="item_name">${item.text}</label>
             </li>
         `);
