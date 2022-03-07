@@ -15,16 +15,18 @@
     <body>
         <main>
             <h1 class="header">Wishlist</h1>
-            <div class="additem">
+            <form class="add-items">
                 <input
                     type="text"
-                    placeholder="Add item"
-                    class="item_to_add"
+                    name="item"
+                    placeholder="Add to Wishlist..."
                     required
                 />
-                <button class="add_btn">Add</button>
-            </div>
-            <ul class="list"></ul>
+                <input type="submit" value="Add" />
+            </form>
+            <ul class="items-list">
+                <!-- <li>items</li> -->
+            </ul>
         </main>
         <script src="script.js"></script>
     </body>

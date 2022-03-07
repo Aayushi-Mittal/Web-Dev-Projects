@@ -1,38 +1,72 @@
 :root {
-    --primary: #edf7f6;
-    --secondary: #b7d8fe;
-    --correct: #d9f99d;
-    --red: #fecdd3;
-    --options: #dbeafe;
+    --secondary: #003049;
+    --primary: #b7d8fe;
+    --done: #d62828;
 }
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    background-image: url(https://source.unsplash.com/random/900×700/?gifts);
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color:var(--primary);
+    /* background-image: url(https://source.unsplash.com/random/900×700/?christmas); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
     font-family: sans-serif;
+    color:var(--secondary);
 }
 
 main {
     padding: 1rem;
     border-radius: 1.5rem;
-    background-color: #ffffff85;
-    backdrop-filter: blur(14px) saturate(180%);
+    background-color: #ffffff50;
+    /* backdrop-filter: blur(16px) saturate(200%); */
+    font-size:1rem;
+}
+
+.header{
+    text-align: center;
+}
+
+input{
+    padding:0.5rem;
+    border-radius:5px;
+    outline:none;
+    border:0;
+}
+
+input[type="submit"]{
+    background:var(--secondary);
+    color:white;
+    transition: all;
+}
+input[type="submit"]:hover{
+    background:white;
+    color:var(--secondary);
+}
+
+input[type="checkbox"]{
+    width:1rem;
+    height:1rem;
+}
+
+ul{
+    list-style:none;
+    padding:0px;
 }
 
 .item {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
     margin: 5px 0px;
-    padding: 5px;
+    padding: 5px 0px;
+    border-bottom:1px solid #ccc;
+    background-color:#ffffff90;
+    transition: all;
+}
+.item:hover{
+    background-color:#ffffff;
 }
 
 .checked {
     text-decoration: line-through;
+    color:var(--done)
 }

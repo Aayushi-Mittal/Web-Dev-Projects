@@ -1,44 +1,33 @@
-let add_btn = document.querySelector(".add_btn");
-let delete_btn = document.querySelector(".delete");
-let checkbox = document.querySelector(".checkbox");
-let label = document.querySelector(".item_name");
-let input = document.querySelector(".item_to_add");
-let itemContainer = document.querySelector(".list");
-let list = JSON.parse(localStorage.getItem("list")) || [];
+const form = document.querySelector(".add-items");
+const itemsList = document.querySelector(".items-list");
+const items = JSON.parse(localStorage.getItem("items")) || [];
 
-renderList();
-
-add_btn.addEventListener("click", function (e) {
-    if (input.value == "") alert("Value should not be empty!");
-    else {
-        item_name = input.value;
-        list.push({
-            text: item_name,
-            isDone: false,
-        });
-        localStorage.setItem("list", JSON.stringify(list));
-        renderList();
-    }
-});
-
-checkbox.addEventListener("change", function (e) {
-    let item_index = parseInt(checkbox.name);
-    list[item_index].done = !list[item_index].done;
-    console.log("Toggled:", list[item_index]);
-    localStorage.setItem("list", JSON.stringify(list));
-    renderList();
-});
-
-function renderList() {
-    console.log(list);
-    output = [];
-    list.map((item, i) => {
-        output.push(`
-            <li class="item">
-                <input class="checkbox ${item.isDone ? "checked" : ""}" type="checkbox" name="${i}" required ${item.isDone ? "checked=true" : ""} />
-                <label for="${i}" class="item_name">${item.text}</label>
-            </li>
-        `);
-    });
-    itemContainer.innerHTML = output.join("");
+function addItem(e) {
+    e.preventDefault();
+    const text = this.querySelector("[name=item]").value;
+    items.push({ text: text, done: false });
+    localStorage.setItem("items", JSON.stringify(items));
+    renderList(items, itemsList);
 }
+
+function toggleCheck(e) {
+    if (!e.target.matches("input")) return;
+    const index = e.target.dataset.index;
+    items[index].done = !items[index].done;
+    localStorage.setItem("items", JSON.stringify(items));
+    renderList(items, itemsList);
+}
+
+function renderList(items = [], ItemsList) {
+    ItemsList.innerHTML = items.map((item, i) => {
+        return `
+            <li class="item">
+                <input type="checkbox" data-index=${i} id="item${i}" ${item.done ? "checked" : ""} /> &nbsp;
+                <label for="item${i}" ${item.done ? "class='checked'" : ""}">${item.text}</label>
+            </li>
+        `;}).join("");
+}
+
+form.addEventListener("submit", addItem);
+itemsList.addEventListener("click", toggleCheck);
+renderList(items, itemsList);
