@@ -10,7 +10,7 @@ body{
     margin: 10vh auto 0 auto;
     /* box-shadow: 0px 0px 43px 17px rgba(153,153,153,1); */
     border-radius:2rem;
-    background:#2B2B2B;
+    background:#2b2b2b;
     color:white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-weight:bolder;
@@ -44,20 +44,24 @@ body{
     text-align: center;
     font-size: 25px;
     cursor: pointer;
+    background: linear-gradient(132deg, #2B2B2B 0.00%, #0b0c0c 100.00%);
+}
+
+.button:hover {
+    background: #0b0c0c20;
+    transition: 0.5s ease-in-out;
 }
 
 .special{
     color:#FFAB08;
 }
 
-#equal {
-    background-color: #FFAB08;
-    color: black;
-    border-bottom-right-radius:2rem;
+.special:hover {
+    background: #FFAB0810;
+    transition: 0.5s ease-in-out;
 }
 
-.button:hover {
-    background-color: #323330;
-    color: white;
-    transition: 0.5s ease-in-out;
+#equal {
+    background: #FFAB08;
+    color: black;
 }
